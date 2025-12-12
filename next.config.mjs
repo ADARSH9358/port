@@ -7,43 +7,44 @@ const nextConfig = {
     },
 };
 
-export default withSentryConfig(nextConfig, {
-    // For all available options, see:
-    // https://github.com/getsentry/sentry-webpack-plugin#options
+// Only use Sentry during runtime, not during build
+const config = process.env.VERCEL_ENV || process.env.NODE_ENV === 'production'
+    ? withSentryConfig(nextConfig, {
+        // For all available options, see:
+        // https://github.com/getsentry/sentry-webpack-plugin#options
 
-    // Suppresses source map uploading logs during build
-    silent: true,
-    org: "javascript-mastery",
-    project: "javascript-nextjs",
+        // Suppresses source map uploading logs during build
+        silent: true,
+        org: "javascript-mastery",
+        project: "javascript-nextjs",
 
-    // Skip Sentry initialization during build
-    skipBuildSourceMapUpload: true,
-    dryRun:process.env.CI==='true',
-}, {
-    // For all available options, see:
-    // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+        // Skip Sentry initialization during build
+        skipBuildSourceMapUpload: true,
 
-    // Upload a larger set of source maps for prettier stack traces (increases build time)
-    widenClientFileUpload: true,
+        // Skip source map upload during CI/CD builds
+        dryRun: process.env.CI === 'true',
+    }, {
+        // For all available options, see:
+        // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
-    // Transpiles SDK to be compatible with IE11 (increases bundle size)
-    transpileClientSDK: true,
+        // Upload a larger set of source maps for prettier stack traces (increases build time)
+        widenClientFileUpload: true,
 
-    // Uncomment to route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-    // This can increase your server load as well as your hosting bill.
-    // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-    // side errors will fail.
-    // tunnelRoute: "/monitoring",
+        // Transpiles SDK to be compatible with IE11 (increases bundle size)
+        transpileClientSDK: true,
 
-    // Hides source maps from generated client bundles
-    hideSourceMaps: true,
+        // Hides source maps from generated client bundles
+        hideSourceMaps: true,
 
-    // Automatically tree-shake Sentry logger statements to reduce bundle size
-    disableLogger: true,
+        // Automatically tree-shake Sentry logger statements to reduce bundle size
+        disableLogger: true,
 
-    // Enables automatic instrumentation of Vercel Cron Monitors.
-    // See the following for more information:
-    // https://docs.sentry.io/product/crons/
-    // https://vercel.com/docs/cron-jobs
-    automaticVercelMonitors: true,
-});
+        // Enables automatic instrumentation of Vercel Cron Monitors.
+        // See the following for more information:
+        // https://docs.sentry.io/product/crons/
+        // https://vercel.com/docs/cron-jobs
+        automaticVercelMonitors: true,
+    })
+    : nextConfig;
+
+export default config;
