@@ -18,6 +18,7 @@ export default withSentryConfig(nextConfig, {
 
     // Skip Sentry initialization during build
     skipBuildSourceMapUpload: true,
+    dryRun:process.env.CI==='true',
 }, {
     // For all available options, see:
     // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
