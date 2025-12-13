@@ -33,7 +33,7 @@ export function Hero() {
         </p>
 
         <h1 data-aos="fade-up" data-aos-delay="200">
-          Vinayak Singh
+          Adarsh Kumar
         </h1>
 
         <h3 data-aos="fade-up" data-aos-delay="400">
@@ -54,7 +54,7 @@ export function Hero() {
 
         <div className="social-media" data-aos="fade-up" data-aos-delay="1000">
           <a
-            href="https://www.linkedin.com/in/codevinayak"
+            href="https://www.linkedin.com/in/adarsh-kumar-nitjsr/"
             target="_blank"
             rel="noreferrer"
           >
@@ -62,7 +62,7 @@ export function Hero() {
           </a>
 
           <a
-            href="https://github.com/CodeVinayak/"
+            href="https://github.com/ADARSH9358"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,7 +70,7 @@ export function Hero() {
           </a>
 
           <a
-            href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak+I+found+your+contact+through+portfolio+site.%0A%0A"
+            href="https://api.whatsapp.com/send/?phone=%2B918077906918&text=Hello+Adarsh+I+found+your+contact+through+portfolio+site.%0A%0A"
             target="_blank"
             rel="noreferrer"
           >

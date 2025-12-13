@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 
+
+
+
 export const Container = styled.header`
   display: flex;
   justify-content: space-between;
@@ -16,6 +19,13 @@ export const Container = styled.header`
   left: 0;
   width: 100vw;
   z-index: 1000;
+  .logo-txt{
+
+  font-family: "Style Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  }
 
   nav{
     display: flex;
