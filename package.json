@@ -4,16 +4,12 @@
   "private": true,
   "dependencies": {
     "@formspree/react": "^2.2.4",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
     "@vercel/analytics": "^1.4.1",
+    "aos": "^2.3.4",
     "react": "^18.3.1",
-    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^18.3.1",
     "react-google-recaptcha": "^2.1.0",
     "react-router-dom": "^6.2.1",
@@ -51,7 +47,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-animate-on-scroll": "^2.1.5",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
     "@types/react-google-recaptcha": "^2.1.2",
     "@types/react-router-hash-link": "^2.4.4",
     "@types/styled-components": "^5.1.18",
